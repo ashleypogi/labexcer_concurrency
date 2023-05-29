@@ -1,0 +1,134 @@
+package ashley;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
+public class JavaExam {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Print name and course/section
+        System.out.print("Enter your name: ");
+        String name = scanner.nextLine();
+        System.out.println("Welcome there! " + name);
+        System.out.print("Enter your course/section: ");
+        String course = scanner.nextLine();
+        
+        // Print current date and time
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        System.out.println("\nCurrent Date and Time: " + formatter.format(now));
+
+        int score = 0;
+
+        // Multiple Choice
+        System.out.println("\nMultiple Choice:");
+        System.out.println("1. What is meant by TCP?");
+        System.out.println("   a. Transfer");
+        System.out.println("   b. Transmission");
+        System.out.println("   c. Transcript");
+        System.out.print("Your answer: ");
+        String answer1 = scanner.nextLine().toLowerCase();
+
+        System.out.println("2. Which of the following is a Networking device?");
+        System.out.println("   a. Hub");
+        System.out.println("   b. Pliers");
+        System.out.println("   c. OSI Layer");
+        System.out.print("Your answer: ");
+        String answer2 = scanner.nextLine().toLowerCase();
+
+        System.out.println("3. What is Polymorphism?");
+        System.out.println("   a. It is the ability of an object to take on many forms.");
+        System.out.println("   b. It enables the use of existing class to define a new class.");
+        System.out.println("   c. It is used to specify methods that a class must implement. It contains headings for a number of public methods.");
+        System.out.print("Your answer: ");
+        String answer3 = scanner.nextLine().toLowerCase();
+
+        System.out.println("4. What is Inheritance?");
+        System.out.println("   a. It is the ability of an object to take on many forms.");
+        System.out.println("   b. It enables the use of existing class to define a new class.");
+        System.out.println("   c. It is used to specify methods that a class must implement. It contains headings for a number of public methods.");
+        System.out.print("Your answer: ");
+        String answer4 = scanner.nextLine().toLowerCase();
+
+        System.out.println("5. What is Interface?");
+        System.out.println("   a. It is the ability of an object to take on many forms.");
+        System.out.println("   b. It enables the use of existing class to define a new class.");
+        System.out.println("   c. It is used to specify methods that a class must implement. It contains headings for a number of public methods.");
+        System.out.print("Your answer: ");
+        String answer5 = scanner.nextLine().toLowerCase();
+
+        // Check Multiple Choice answers
+        if (answer1.equals("b")) {
+            score += 2;
+        }
+        if (answer2.equals("a")) {
+            score += 2;
+        }
+        if (answer3.equals("a")) {
+            score += 2;
+        }
+        if (answer4.equals("b")) {
+            score += 2;
+        }
+        if (answer5.equals("c")) {
+            score += 2;
+        }
+
+        // Enumeration
+        System.out.println("\nEnumeration:");
+        System.out.println("1. What is the correct initialization of java regex package?");
+        System.out.print("Your answer: ");
+        String answer6 = scanner.nextLine().toLowerCase();
+
+        System.out.println("2. There are two types of functions in programming, what are those?");
+        System.out.print("Your answer: ");
+        String answer7 = scanner.nextLine().toLowerCase();
+
+        System.out.println("3. It is a programming methodology that defines objects whose behaviors and interactions accomplish a given task.");
+        System.out.print("Your answer: ");
+        String answer8 = scanner.nextLine().toLowerCase();
+
+        System.out.println("4. In Java Concurrency, it contains two or more parts that can run concurrently.");
+        System.out.print("Your answer: ");
+        String answer9 = scanner.nextLine().toLowerCase();
+
+        System.out.println("5. In Java Concurrency, it is a thread method that starts a thread by calling its run method.");
+        System.out.print("Your answer: ");
+        String answer10 = scanner.nextLine().toLowerCase();
+
+        // Check Enumeration answers
+        if (answer6.equals("java.util.regex")) {
+            score += 3;
+        }
+        if (answer7.equals("pre-defined functions, and user-defined functions")) {
+            score += 3;
+        }
+        if (answer8.equals("object-oriented programming")) {
+            score += 3;
+        }
+        if (answer9.equals("multithreaded program")) {
+            score += 3;
+        }
+        if (answer10.equals("start")) {
+            score += 3;
+        }
+
+        System.out.println("\nScore: " + score);
+
+        // Check score and provide feedback
+        if (score > 10) {
+            System.out.println("Good Job! You're now ready to take next lessons and enhance skills in Java!");
+        } else if (score >= 6) {
+            System.out.println("Good Job! But you need more practice learning!");
+        } else {
+            System.out.println("The student must reattempt the quiz.");
+            main(args); // Loop the program to allow retaking the quiz
+        }
+
+        scanner.close();
+    }
+}
+
+
+// You can use this! So that you have an idea to do the task.
